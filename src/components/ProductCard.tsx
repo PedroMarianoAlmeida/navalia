@@ -7,7 +7,7 @@ export const ProductCard = ({
 }) => {
   const quantity = 0; // Will be fetched from local storage
   return (
-    <div className="bg-white border border-gray-200 rounded-lg shadow-sm">
+    <div className="bg-white border border-gray-200 rounded-lg shadow-sm w-90">
       <div className="p-4">
         <div className="flex items-center justify-between">
           <div className="flex-1">
@@ -18,7 +18,7 @@ export const ProductCard = ({
           </div>
 
           <div className="flex items-center gap-3">
-            <button className="h-8 w-8 border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 flex items-center justify-center transition-colors">
+            <button className="h-8 w-8 border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 flex items-center justify-center transition-colors text-black">
               -
             </button>
 
@@ -26,7 +26,7 @@ export const ProductCard = ({
               {0}
             </span>
 
-            <button className="h-8 w-8 border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 flex items-center justify-center transition-colors">
+            <button className="h-8 w-8 border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 flex items-center justify-center transition-colors text-black">
               +
             </button>
           </div>
