@@ -1,23 +1,25 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Architecture and design decisions
+
 - NextJs only (no other server side or database)
-    - Server
-        - Store Products on Price on Server
-        - Calculate discount on Server
-    - Client
-        - Manage shopping card items on Client (local storage)
-        - Validate VIP or regular by query params
-    - Communication between client and server side with Server Action (better then rest api with route because keep the TS)
+  - Server
+    - Store Products on Price on Server
+    - Calculate discount on Server
+  - Client
+    - Manage shopping card items on Client (local storage)
+    - Validate VIP or regular by query params
+  - Communication between client and server side with Server Action (better then rest api with route because keep the TS)
 
 ## TODO
- - [ ] Implement and test discount business logic
-    - The product list is injected into getPromotion (instead of importing it) to keep the function pure, decoupled, and easily mockable in tests.
- - [ ] Show items on page
- - [ ] Allow add/remove items (+ / - buttons)
- - [ ] Allow switch VIP and Regular user
- - [ ] Show shopping card info
- - [ ] UI enhancement
+
+- [x] Implement and test discount business logic
+  - The product list is injected into getPromotion (instead of importing it) to keep the function pure, decoupled, and easily mockable in tests.
+- [ ] Show items on page
+- [ ] Allow add/remove items (+ / - buttons)
+- [ ] Allow switch VIP and Regular user
+- [ ] Show shopping card info
+- [ ] UI enhancement
 
 ## Getting Started
 
