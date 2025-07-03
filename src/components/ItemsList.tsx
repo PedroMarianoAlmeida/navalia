@@ -1,0 +1,16 @@
+import { products } from "@/data/products";
+import { ProductCard } from "@/components/ProductCard";
+import { VipToggle } from "@/components/VipToggle";
+
+export const ItemsList = async () => {
+  return (
+    <section>
+      <ul className="flex flex-col gap-4  items-center">
+        {products.map((product) => (
+          <ProductCard product={product} key={product.id} />
+        ))}
+        <VipToggle />
+      </ul>
+    </section>
+  );
+};

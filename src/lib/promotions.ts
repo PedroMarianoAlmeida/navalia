@@ -1,4 +1,4 @@
-import { Product } from "@/app/data/products";
+import { Product } from "@/data/products";
 
 export interface PromotionOptions {
   products: Product[];
