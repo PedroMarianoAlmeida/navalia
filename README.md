@@ -19,8 +19,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 - [x] Show items on page
 - [x] Show switch VIP and Regular user
 - [x] Add interactivity on Items and VIP Switch
-- [ ] Calculate discounts
-- [ ] Show shopping card info
+- [x] Calculate discounts
 - [ ] UI enhancement
 
 ## Getting Started
