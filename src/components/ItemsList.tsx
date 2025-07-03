@@ -2,7 +2,7 @@ import { products } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
 import { VipToggle } from "@/components/VipToggle";
 import { PriceProvider } from "@/providers/PriceProvider";
-
+import { Total } from "@/components/Total";
 export const ItemsList = async () => {
   return (
     <section>
@@ -12,6 +12,7 @@ export const ItemsList = async () => {
             <ProductCard product={product} key={product.id} />
           ))}
           <VipToggle />
+          <Total />
         </ul>
       </PriceProvider>
     </section>
