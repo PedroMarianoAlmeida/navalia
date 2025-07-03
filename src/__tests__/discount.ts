@@ -2,9 +2,9 @@ import {
   getPromotion,
   PromotionOptions,
   PromotionItem,
-} from "@/app/lib/promotions";
+} from "../app/lib/promotions";
 
-import { products } from "@/app/data/products";
+import { products } from "../app/data/products";
 
 describe("getPromotion", () => {
   it("Scenario 1: common customer with 3 t-shirts", () => {
