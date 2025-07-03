@@ -9,8 +9,12 @@ interface Props {
 }
 
 export const ProductCard = ({ product }: Props) => {
-  const { shoppingCart, addItem, removeItem } = usePrice();
+  const { shoppingCart, addItem, removeItem, promotionItems } = usePrice();
   const qty = shoppingCart.get(product.id) ?? 0;
+  const itemPrice = promotionItems.find(
+    (item) => item.productID === product.id
+  );
+  console.log({ itemPrice });
 
   return (
     <div className="bg-white border border-gray-200 rounded-lg shadow-sm w-90">
@@ -44,7 +48,9 @@ export const ProductCard = ({ product }: Props) => {
         </div>
         <div className="flex justify-between items-center mt-3 pt-3 border-t">
           <span className="text-sm text-gray-500">Subtotal:</span>
-          <span className="font-semibold text-gray-900">TO DO</span>
+          <span className="font-semibold text-gray-900">
+            {itemPrice ? "" : 0}
+          </span>
         </div>
       </div>
     </div>

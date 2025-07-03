@@ -35,7 +35,6 @@ export const PriceProvider = ({ children }: { children: ReactNode }) => {
 
   const [promotionItems, setPromotionItems] = useState<PromotionItem[]>([]);
   const [totalPrice, setTotalPrice] = useState<number>(0);
-  console.log({ promotionItems, totalPrice });
   const toggleVip = () => setIsVip((v) => !v);
 
   const addItem = (id: string) =>
