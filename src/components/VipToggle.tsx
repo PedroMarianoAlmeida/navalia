@@ -1,7 +1,13 @@
+"use client";
+import { useState } from "react";
+
 export const VipToggle = () => {
-  const isVip = true;
+  const [isVip, setIsVip] = useState(false);
   return (
-    <div className="flex items-center space-x-3">
+    <div
+      className="flex items-center space-x-3"
+      onClick={() => setIsVip((curr) => !curr)}
+    >
       <span
         className={`font-medium transition-colors ${
           isVip ? "text-gray-500" : "text-blue-600"
