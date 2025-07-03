@@ -12,6 +12,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## TODO
  - [ ] Implement and test discount business logic
+    - The product list is injected into getPromotion (instead of importing it) to keep the function pure, decoupled, and easily mockable in tests.
  - [ ] Show items on page
  - [ ] Allow add/remove items (+ / - buttons)
  - [ ] Allow switch VIP and Regular user
