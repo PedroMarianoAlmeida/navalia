@@ -7,8 +7,9 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
     - Store Products on Price on Server
     - Calculate discount on Server
   - Client
-    - Manage shopping card items on Client (local storage)
-    - Validate VIP or regular by query params
+    - Manage shopping card items
+    - Validate VIP or regular
+    - use Context Api
   - Communication between client and server side with Server Action (better then rest api with route because keep the TS)
 
 ## TODO
@@ -17,7 +18,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
   - The product list is injected into getPromotion (instead of importing it) to keep the function pure, decoupled, and easily mockable in tests.
 - [x] Show items on page
 - [x] Show switch VIP and Regular user
-- [ ] Add interactivity on Items and VIP Switch
+- [x] Add interactivity on Items and VIP Switch
 - [ ] Calculate discounts
 - [ ] Show shopping card info
 - [ ] UI enhancement

@@ -1,7 +1,12 @@
+"use client";
+
+import { usePrice } from "@/providers/PriceProvider";
+
 export const VipToggle = () => {
-  const isVip = true;
+  const { isVip, toggleVip } = usePrice();
+
   return (
-    <div className="flex items-center space-x-3">
+    <div className="flex items-center space-x-3" onClick={toggleVip}>
       <span
         className={`font-medium transition-colors ${
           isVip ? "text-gray-500" : "text-blue-600"
@@ -11,6 +16,7 @@ export const VipToggle = () => {
       </span>
       <button
         role="switch"
+        aria-checked={isVip}
         className={`
           relative inline-flex items-center h-6 rounded-full w-11
           transition-colors duration-200
