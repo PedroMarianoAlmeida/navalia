@@ -1,6 +1,19 @@
 "use client";
 
-import React, { createContext, useState, useContext, ReactNode } from "react";
+import React, {
+  createContext,
+  useState,
+  useContext,
+  ReactNode,
+  useEffect,
+} from "react";
+import { getPromotionServerAction } from "@/server/discountService";
+import { products } from "@/data/products";
+import {
+  PromotionItem,
+  PromotionOptions,
+  generateTotalPrice,
+} from "@/lib/promotions";
 
 interface PriceContextValue {
   isVip: boolean;
@@ -8,6 +21,8 @@ interface PriceContextValue {
   shoppingCart: Map<string, number>;
   addItem: (id: string) => void;
   removeItem: (id: string) => void;
+  promotionItems: PromotionItem[];
+  totalPrice: number;
 }
 
 const PriceContext = createContext<PriceContextValue | null>(null);
@@ -18,6 +33,9 @@ export const PriceProvider = ({ children }: { children: ReactNode }) => {
     () => new Map()
   );
 
+  const [promotionItems, setPromotionItems] = useState<PromotionItem[]>([]);
+  const [totalPrice, setTotalPrice] = useState<number>(0);
+  console.log({ promotionItems, totalPrice });
   const toggleVip = () => setIsVip((v) => !v);
 
   const addItem = (id: string) =>
@@ -36,6 +54,26 @@ export const PriceProvider = ({ children }: { children: ReactNode }) => {
       return next;
     });
 
+  const loadPromotion = async () => {
+    try {
+      const items = await getPromotionServerAction({
+        isVip,
+        shoppingCart,
+      } as Pick<PromotionOptions, "isVip" | "shoppingCart">);
+
+      setPromotionItems(items);
+      setTotalPrice(generateTotalPrice(items, products));
+    } catch (err) {
+      console.error(err);
+      setPromotionItems([]);
+      setTotalPrice(0);
+    }
+  };
+
+  useEffect(() => {
+    loadPromotion();
+  }, [isVip, shoppingCart]);
+
   return (
     <PriceContext.Provider
       value={{
@@ -44,6 +82,8 @@ export const PriceProvider = ({ children }: { children: ReactNode }) => {
         shoppingCart,
         addItem,
         removeItem,
+        promotionItems,
+        totalPrice,
       }}
     >
       {children}
