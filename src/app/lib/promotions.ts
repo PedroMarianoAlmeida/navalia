@@ -1,12 +1,12 @@
 import { Product } from "@/app/data/products";
 
-interface PromotionOptions {
+export interface PromotionOptions {
   products: Product[];
   shoppingCart: Map<Product["id"], number>;
   isVip: boolean;
 }
 
-interface PromotionItem {
+export interface PromotionItem {
   productID: Product["id"];
   fullPriceQty: number;
   discountedQty: number;
@@ -14,7 +14,7 @@ interface PromotionItem {
   discountedUnitPrice?: number;
 }
 
-const getPromotion = ({
+export const getPromotion = ({
   products,
   isVip,
   shoppingCart,
