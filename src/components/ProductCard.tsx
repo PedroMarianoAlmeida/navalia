@@ -45,7 +45,7 @@ export const ProductCard = ({ product }: Props) => {
             </button>
           </div>
         </div>
-        <div className="flex justify-between items-center mt-3 pt-3 border-t">
+        <div className="flex justify-between items-center mt-3 pt-3 border-t h-16">
           <span className="text-sm text-gray-500">Subtotal:</span>
           <span className="font-semibold text-gray-900">
             {itemDynamicPrice ? (
@@ -54,7 +54,7 @@ export const ProductCard = ({ product }: Props) => {
                 promotionItem={itemDynamicPrice}
               />
             ) : (
-              0
+              "$0.00"
             )}
           </span>
         </div>
